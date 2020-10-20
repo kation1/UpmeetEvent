@@ -21,7 +21,7 @@ namespace UpmeetProject.Controllers
             this.dal = dal;
         }
         [HttpGet]
-        public IEnumerable<Event> GetAllEvents()
+        public IEnumerable<Event> GetEventList()
         {
             return dal.GetEventList();
         }

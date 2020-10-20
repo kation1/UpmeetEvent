@@ -17,7 +17,7 @@ namespace UpmeetProject.Services
         private string connString;
         public DAL(IConfiguration config)
         {
-            connString = config.GetConnectionString("rick");
+            connString = config.GetConnectionString("kathryn");
         }
 
         public int AddEvent(Event e)

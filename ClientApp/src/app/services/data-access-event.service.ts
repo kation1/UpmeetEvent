@@ -8,7 +8,7 @@ export class DataAccessEventService {
 
   apiUrl = '/api/Events';
 
-  getEvents() {
+  getEventList() {
     return this.http.get(this.apiUrl)
   }
 }
