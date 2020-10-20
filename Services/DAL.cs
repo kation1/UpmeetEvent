@@ -17,7 +17,7 @@ namespace UpmeetProject.Services
         private string connString;
         public DAL(IConfiguration config)
         {
-            connString = config.GetConnectionString("kathryn");
+            connString = config.GetConnectionString("dave");
         }
 
         public int AddEvent(Event e)
@@ -44,12 +44,11 @@ namespace UpmeetProject.Services
 
         public Event GetEvent(long id)
         {
-
             SqlConnection conn = new SqlConnection(connString);
+            //string command = $"SELECT * FROM Event WHERE ID= {id}";
             string command = "SELECT * FROM Event WHERE ID= @id";
-            Event result = (Event)conn.Query<Event>(command );
+            Event result = conn.QueryFirst<Event>(command, new { id = id });
             return result;
-
         }
 
         public IEnumerable<Event> GetEventList()

@@ -26,6 +26,7 @@ namespace UpmeetProject.Controllers
         {
             return dal.GetEventList();
         }
+
         [HttpGet("{id}")]
         public Event GetEvent(long id )
         {
