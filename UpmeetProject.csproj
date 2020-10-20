@@ -35,6 +35,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Remove="ClientApp\src\app\event\event.component.ts" />
+    <TypeScriptCompile Remove="ClientApp\src\app\favorite\favorite.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\interfaces\event.ts" />
   </ItemGroup>
 
