@@ -20,11 +20,19 @@ namespace UpmeetProject.Controllers
         {
             this.dal = dal;
         }
+
         [HttpGet]
         public IEnumerable<Event> GetEventList()
         {
             return dal.GetEventList();
         }
+        [HttpGet("{id}")]
+        public Event GetEvent(long id )
+        {
+            return dal.GetEvent(id);
+        }
+
+
 
     }
 }

@@ -16,7 +16,7 @@ namespace UpmeetProject.Services
 
         int AddEvent(Event e);
 
-        Event GetEvent(int id);
+        Event GetEvent(long id);
         //Maybe a long?
 
         Favorite GetFavorite(int id);

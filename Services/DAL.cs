@@ -42,12 +42,12 @@ namespace UpmeetProject.Services
             return result;
         }
 
-        public Event GetEvent(int id)
+        public Event GetEvent(long id)
         {
 
             SqlConnection conn = new SqlConnection(connString);
-            string command = "SELECT * FROM Event WHERE ID=@id";
-            Event result = (Event)conn.Query<Event>(command, new { id });
+            string command = "SELECT * FROM Event WHERE ID= @id";
+            Event result = (Event)conn.Query<Event>(command );
             return result;
 
         }

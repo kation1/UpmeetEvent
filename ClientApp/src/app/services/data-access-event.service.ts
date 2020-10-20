@@ -11,4 +11,9 @@ export class DataAccessEventService {
   getEventList() {
     return this.http.get(this.apiUrl)
   }
+
+  getEvent(id) {
+    return this.http.get(`${this.apiUrl}/${id}`)
+  }
+
 }
