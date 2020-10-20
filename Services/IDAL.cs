@@ -23,7 +23,7 @@ namespace UpmeetProject.Services
 
         int AddFavorite(Favorite f);
 
-        int RemoveFavorite(int id);
+        void RemoveFavorite(int id);
 
 
 

@@ -32,12 +32,13 @@ namespace UpmeetProject.Services
             return result;
         }
 
-        public int RemoveFavorite(int id)
+        public void RemoveFavorite(int id)
         {
             SqlConnection conn = new SqlConnection(connString);
             string command = "DELETE FROM Favorite WHERE ID=@id";
-            int result = conn.Execute(command, new { id = id });
-            return result;
+            conn.Execute(command, new { id = id });
+            //int result = conn.Execute(command, new { id = id });
+            //return result;
         }
 
         public Event GetEvent(long id)

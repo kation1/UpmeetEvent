@@ -29,5 +29,11 @@ namespace UpmeetProject.Controllers
         {
             return dal.GetFavorite(id);
         }
+
+        [HttpDelete("delete/{id}")]
+        public void RemoveFavorite(int id)
+        {
+            dal.RemoveFavorite(id);
+        }
     }
 }

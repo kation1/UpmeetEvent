@@ -18,4 +18,8 @@ export class DataAccessFavoriteService {
   getFavorite(id) {
     return this.http.get(`${this.apiUrl}/${id}`)
   }
+
+  removeFavorite(id) {
+    return this.http.get(`${this.apiUrl}/delete/${id}`)
+  }
 }
