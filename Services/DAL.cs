@@ -52,11 +52,19 @@ namespace UpmeetProject.Services
 
         }
 
-        public IEnumerable<string> GetEventList()
+        public IEnumerable<Event> GetEventList()
         {
             SqlConnection conn = new SqlConnection(connString);
             string command = "SELECT * FROM Event";
-            IEnumerable<string> result = conn.Query<string>(command);
+            IEnumerable<Event> result = conn.Query<Event>(command);
+            return result;
+        }
+
+        public IEnumerable<Favorite> GetFavoriteList()
+        {
+            SqlConnection conn = new SqlConnection(connString);
+            string command = "SELECT * FROM Favorite";
+            IEnumerable<Favorite> result = conn.Query<Favorite>(command);
             return result;
         }
 
