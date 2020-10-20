@@ -9,17 +9,17 @@ namespace UpmeetProject.Services
     public interface IDAL
     {
 
-        IEnumerable<string> GetList();
+        IEnumerable<string> GetEventList();
         //Maybe a class?
 
-        Event AddEvent();
+        int AddEvent(Event e);
 
         Event GetEvent(int id);
         //Maybe a long?
 
         Favorite GetFavorite(int id);
 
-        int AddFavorite(int id);
+        int AddFavorite(Favorite f);
 
         int RemoveFavorite(int id);
 

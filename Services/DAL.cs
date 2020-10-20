@@ -20,39 +20,68 @@ namespace UpmeetProject.Services
             connString = config.GetConnectionString("rick");
         }
 
-        public Event AddEvent()
+        public int AddEvent(Event e)
         {
-            throw new NotImplementedException();
+            SqlConnection conn = new SqlConnection(connString);
+            string command = "INSERT INTO Event (Id, Name, Date) VALUES (@Id, @Name, @Date)";
+            int result = conn.Execute(command, new
+            {
+                Id = e.Id,
+                Name = e.Name,
+                Date = e.Date
+            });
+            conn.Close();
+            return result;
         }
 
-        public int AddFavorite(int id)
+        public int RemoveFavorite(int id)
         {
-            throw new NotImplementedException();
+            SqlConnection conn = new SqlConnection(connString);
+            string command = "DELETE FROM Event WHERE ID=@id";
+            int result = conn.Execute(command, new { id = id });
+            return result;
         }
 
         public Event GetEvent(int id)
         {
 
             SqlConnection conn = new SqlConnection(connString);
-            string command = "SELECT * FROM Events WHERE ID=@id";
+            string command = "SELECT * FROM Event WHERE ID=@id";
             Event result = (Event)conn.Query<Event>(command, new { id });
             return result;
 
         }
 
+        public IEnumerable<string> GetEventList()
+        {
+            SqlConnection conn = new SqlConnection(connString);
+            string command = "SELECT * FROM Event";
+            IEnumerable<string> result = conn.Query<string>(command);
+            return result;
+        }
+
+        public int AddFavorite(Favorite f)
+        {
+            SqlConnection conn = new SqlConnection(connString);
+            string command = "INSERT INTO Favorite (Id, UserId, EventId) VALUES (@Id, @UserId, @EventId)";
+            int result = conn.Execute(command, new
+            {
+                Id = f.Id,
+                UserId = f.UserId,
+                EventId = f.EventId
+            });
+            conn.Close();
+            return result;
+        }
+
         public Favorite GetFavorite(int id)
         {
-            throw new NotImplementedException();
+            SqlConnection conn = new SqlConnection(connString);
+            string command = "SELECT * FROM Favorite WHERE ID=@id";
+            Favorite result = (Favorite)conn.Query<Favorite>(command, new { id });
+            return result;
         }
 
-        public IEnumerable<string> GetList()
-        {
-            throw new NotImplementedException();
-        }
 
-        public int RemoveFavorite(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
