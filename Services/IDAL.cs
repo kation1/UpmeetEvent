@@ -14,7 +14,7 @@ namespace UpmeetProject.Services
 
         IEnumerable<Favorite> GetFavoriteList();
 
-        int AddEvent(Event e);
+        long AddEvent(Event e);
 
         Event GetEvent(long id);
         //Maybe a long?
