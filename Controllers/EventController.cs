@@ -33,6 +33,13 @@ namespace UpmeetProject.Controllers
             return dal.GetEvent(id);
         }
 
+        [HttpPost("create")]      //Might need [FromBody]
+        public Event AddEvent()
+        {
+            Event fakeEvent = new Event {Name = "fakeName", Date = "fakeDate" };
+            return fakeEvent;
+        }
+
 
 
     }

@@ -20,21 +20,19 @@ namespace UpmeetProject.Services
             connString = config.GetConnectionString("dave");
         }
 
-        public int AddEvent(Event e)
+        public long AddEvent(Event e)
         {
             SqlConnection conn = new SqlConnection(connString);
-            string command = "INSERT INTO Event (Id, Name, Date) VALUES (@Id, @Name, @Date)";
-            int result = conn.Execute(command, new
+            string command = "INSERT INTO Event (Name, Date) VALUES (@Name, @Date)";
+            long result = conn.Execute(command, new
             {
-                Id = e.Id,
                 Name = e.Name,
                 Date = e.Date
             });
-            conn.Close();
             return result;
         }
 
-        public int RemoveFavorite(int id)
+        public int RemoveFavorite(int id) //Delete from Favorite, not Event, ID should be EventID
         {
             SqlConnection conn = new SqlConnection(connString);
             string command = "DELETE FROM Event WHERE ID=@id";
