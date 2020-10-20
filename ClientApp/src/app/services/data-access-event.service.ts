@@ -7,7 +7,7 @@ export class DataAccessEventService {
     constructor(private http: HttpClient) {
   }
 
-  apiUrl = '/api/Events';
+  apiUrl = '/api/Event';
 
   getEventList() {
     return this.http.get(this.apiUrl)

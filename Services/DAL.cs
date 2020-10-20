@@ -17,7 +17,7 @@ namespace UpmeetProject.Services
         private string connString;
         public DAL(IConfiguration config)
         {
-            connString = config.GetConnectionString("dave");
+            connString = config.GetConnectionString("kathryn");
         }
 
         public long AddEvent(Event e)
@@ -32,10 +32,10 @@ namespace UpmeetProject.Services
             return result;
         }
 
-        public int RemoveFavorite(int id) //Delete from Favorite, not Event, ID should be EventID
+        public int RemoveFavorite(int id)
         {
             SqlConnection conn = new SqlConnection(connString);
-            string command = "DELETE FROM Event WHERE ID=@id";
+            string command = "DELETE FROM Favorite WHERE ID=@id";
             int result = conn.Execute(command, new { id = id });
             return result;
         }
@@ -83,7 +83,7 @@ namespace UpmeetProject.Services
         {
             SqlConnection conn = new SqlConnection(connString);
             string command = "SELECT * FROM Favorite WHERE ID=@id";
-            Favorite result = (Favorite)conn.Query<Favorite>(command, new { id });
+            Favorite result = conn.QueryFirst<Favorite>(command, new { id });
             return result;
         }
 

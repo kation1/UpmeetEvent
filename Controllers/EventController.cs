@@ -33,10 +33,12 @@ namespace UpmeetProject.Controllers
             return dal.GetEvent(id);
         }
 
-        [HttpPost("create")]      //Might need [FromBody]
-        public Event AddEvent()
+        [HttpPost("create")]  
+        [Consumes("Application/Json")]
+        //Might need [FromBody]
+        public Event AddEvent([FromBody]string name, string date)
         {
-            Event fakeEvent = new Event {Name = "fakeName", Date = "fakeDate" };
+            Event fakeEvent = new Event {Name = name, Date = date };
             return fakeEvent;
         }
 
