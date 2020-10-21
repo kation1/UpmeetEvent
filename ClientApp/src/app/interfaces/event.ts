@@ -13,3 +13,7 @@ export interface Favorite {
   userID: string;
   EventID: number;
 }
+
+export interface Favorites {
+  results: Favorite[];
+}
