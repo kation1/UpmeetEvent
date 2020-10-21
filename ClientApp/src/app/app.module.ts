@@ -26,7 +26,7 @@ import { EventComponent } from './event/event.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: '', component: EventComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'favorite', component: FavoriteComponent },
       { path: 'event', component: EventComponent },

@@ -1,4 +1,6 @@
-﻿import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DataAccessEventService } from '../services/data-access-event.service';
+import { Event, Events } from './../interfaces/event';
 
 @Component({
     selector: 'app-event',
@@ -7,8 +9,14 @@
 })
 /** event component*/
 export class EventComponent {
-    /** event ctor */
-    constructor() {
+  @Input() events: Events;
+  event: Event;
 
-    }
+  constructor(private eventService: DataAccessEventService) { }
+
+  ngOnInit(): void{
+    this.eventService.getEventList().subscribe(
+      (data: Events) =>
+        this.events = data)
+      };
 }
