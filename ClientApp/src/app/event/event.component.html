@@ -11,8 +11,8 @@
   <button (click)="doHidden()">Add Event</button>
   <br /><br />
   <div [ngClass]="{'hidden':!isHidden}">
-    Event Name: <input [(ngModel)]="Name" type="text" /><br />
-    Event Date: <input [(ngModel)]="Date" type="text" /><br />
+    Event Name: <input [(ngModel)]="name" type="text" /><br />
+    Event Date: <input [(ngModel)]="date" type="text" /><br />
     <br />
     <button (click)="addEvent()"> Submit </button>
   </div>

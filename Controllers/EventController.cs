@@ -34,12 +34,10 @@ namespace UpmeetProject.Controllers
         }
 
         [HttpPost("create")]  
-        [Consumes("Application/Json")]
         //Might need [FromBody]
-        public Event AddEvent([FromBody]string name, string date)
+        public Event AddEvent(Event E)
         {
-            Event fakeEvent = new Event {Name = name, Date = date };
-            return fakeEvent;
+            return AddEvent(E);
         }
 
 

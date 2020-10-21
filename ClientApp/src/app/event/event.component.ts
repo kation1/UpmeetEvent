@@ -11,7 +11,9 @@ import { Event, Events } from './../interfaces/event';
 export class EventComponent {
   @Input() events: Events;
   event: Event;
-
+  name: string;
+  date: string;
+  id: number;
 
   constructor(private eventService: DataAccessEventService) { }
 
@@ -23,5 +25,17 @@ export class EventComponent {
 
   doHidden = function () {
     this.isHidden = !this.isHidden;
+  }
+
+  addEvent() {
+    let newEvent: Event = {
+      id: 0,
+      name: this.name,
+      date: this.date,
+    }
+    console.log(this.name);
+    console.log(newEvent);
+    this.eventService.addEvent(newEvent).subscribe();
+
   }
 }

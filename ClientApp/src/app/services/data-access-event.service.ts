@@ -17,10 +17,8 @@ export class DataAccessEventService {
     return this.http.get(`${this.apiUrl}/${id}`)
   }
 
-  addEvent(party: Event) {
-    party.name = "PartyName";
-    party.date = "MakeItHappen";
-    return this.http.post<Event>(this.apiUrl + '/create', party)
+  addEvent(newEvent: Event) {
+    return this.http.post<Event>(this.apiUrl + '/create', newEvent)
   }
 
 }
