@@ -17,3 +17,13 @@ export interface Favorite {
 export interface Favorites {
   results: Favorite[];
 }
+
+export interface UserFavorite {
+  name: string;
+  date: string;
+  userId: string;
+}
+
+export interface UserFavorites {
+  results: UserFavorite[];
+}

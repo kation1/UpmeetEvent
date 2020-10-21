@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Favorite } from '../interfaces/event';
    
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class DataAccessFavoriteService {
   constructor(private http: HttpClient) {
 
   }
-  apiUrl = '/api/Favorite'
+  apiUrl = '/api/favorite'
 
 
 

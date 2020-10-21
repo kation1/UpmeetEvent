@@ -12,7 +12,7 @@ namespace UpmeetProject.Services
         IEnumerable<Event> GetEventList();
         //Maybe a class?
 
-        IEnumerable<Favorite> GetFavoriteList();
+        IEnumerable<UserFavorite> GetFavoriteList();
 
         long AddEvent(Event e);
 

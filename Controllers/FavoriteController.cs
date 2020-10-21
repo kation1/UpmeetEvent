@@ -20,7 +20,7 @@ namespace UpmeetProject.Controllers
             this.dal = dal;
         }
         [HttpGet]
-        public IEnumerable<Favorite> GetFavoriteList()
+        public IEnumerable<UserFavorite> GetFavoriteList()
         {
             return dal.GetFavoriteList();
         }

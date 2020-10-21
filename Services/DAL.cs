@@ -58,11 +58,11 @@ namespace UpmeetProject.Services
             return result;
         }
 
-        public IEnumerable<Favorite> GetFavoriteList()
+        public IEnumerable<UserFavorite> GetFavoriteList()
         {
             SqlConnection conn = new SqlConnection(connString);
-            string command = "SELECT * FROM Favorite";
-            IEnumerable<Favorite> result = conn.Query<Favorite>(command);
+            string command = "SELECT Event.name, Event.date, Favorite.userid FROM Event INNER JOIN Favorite ON Event.id = Favorite.eventid Where userid = 'TestUser'";   ///User Input at TestUser
+            IEnumerable<UserFavorite> result = conn.Query<UserFavorite>(command);
             return result;
         }
 
