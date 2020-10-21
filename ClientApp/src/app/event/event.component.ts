@@ -40,14 +40,5 @@ export class EventComponent {
 
   }
 
-  addFavorite() {
-    let newFavorite: Favorite = {
-      id: 0,
-      userID: "TestUser",
-      EventID: this.id
-    }
-    console.log(this.event.id);
-    console.log(newFavorite);
-    this.favoriteService.addFavorite(newFavorite).subscribe();
-  }
+
 }

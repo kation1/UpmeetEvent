@@ -17,7 +17,7 @@ namespace UpmeetProject.Services
         private string connString;
         public DAL(IConfiguration config)
         {
-            connString = config.GetConnectionString("rick");
+            connString = config.GetConnectionString("kathryn");
         }
 
         public void AddEvent(Event e)
@@ -70,7 +70,13 @@ namespace UpmeetProject.Services
         {
             SqlConnection conn = new SqlConnection(connString);
             string command = "INSERT INTO Favorite (UserId, EventId) VALUES (@UserId, @EventId)";
-            conn.Execute(command, new
+
+            
+                if (f.UserId == null)
+                { f.UserId = "TestUser"; }
+
+
+                conn.Execute(command, new
             {
                 UserId = f.UserId,
                 EventId = f.EventId
