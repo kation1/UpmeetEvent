@@ -17,7 +17,7 @@ namespace UpmeetProject.Services
         private string connString;
         public DAL(IConfiguration config)
         {
-            connString = config.GetConnectionString("rick");
+            connString = config.GetConnectionString("kathryn");
         }
 
         public long AddEvent(Event e)
@@ -61,7 +61,7 @@ namespace UpmeetProject.Services
         public IEnumerable<UserFavorite> GetFavoriteList()
         {
             SqlConnection conn = new SqlConnection(connString);
-            string command = "SELECT Event.name, Event.date, Favorite.userid FROM Event INNER JOIN Favorite ON Event.id = Favorite.eventid Where userid = 'TestUser'";   ///User Input at TestUser
+            string command = "SELECT Favorite.id, Event.name, Event.date, Favorite.userid FROM Event INNER JOIN Favorite ON Event.id = Favorite.eventid Where userid = 'TestUser'";   ///User Input at TestUser
             IEnumerable<UserFavorite> result = conn.Query<UserFavorite>(command);
             return result;
         }
