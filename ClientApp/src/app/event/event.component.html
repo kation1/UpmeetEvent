@@ -3,9 +3,8 @@
   <h6>(Click to see more detail)</h6>
   <br /><br />
   <ng-container *ngFor="let frank of events">
-    {{frank.name}} <br />
+    <a routerLink="/eventdetails" [queryParams]="frank">{{frank.name}}</a><br />
 
   </ng-container>
-
 
   </div>

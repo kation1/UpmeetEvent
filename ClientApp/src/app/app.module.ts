@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { EventComponent } from './event/event.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { EventComponent } from './event/event.component';
     HomeComponent,
     CounterComponent,
     FavoriteComponent,
-    EventComponent
+    EventComponent,
+    EventDetailsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -30,6 +32,7 @@ import { EventComponent } from './event/event.component';
       { path: 'counter', component: CounterComponent },
       { path: 'favorite', component: FavoriteComponent },
       { path: 'event', component: EventComponent },
+      { path: 'eventdetails', component: EventDetailsComponent },
     ])
   ],
   providers: [],
