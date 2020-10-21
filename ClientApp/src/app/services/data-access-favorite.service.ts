@@ -23,4 +23,8 @@ export class DataAccessFavoriteService {
   removeFavorite(id: number) {
     return this.http.delete(`${this.apiUrl}/delete/${id}`)
   }
+
+  addFavorite(newFavorite: Favorite) {
+    return this.http.post<Favorite>(this.apiUrl + '/addfavorite', newFavorite)
+  }
 }

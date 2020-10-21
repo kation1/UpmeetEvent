@@ -35,5 +35,12 @@ namespace UpmeetProject.Controllers
         {
             dal.RemoveFavorite(id);
         }
+
+        [HttpPost("addfavorite")]
+        //Might need [FromBody]
+        public void AddEvent(Favorite F)
+        {
+            dal.AddFavorite(F);
+        }
     }
 }

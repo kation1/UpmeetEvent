@@ -66,18 +66,15 @@ namespace UpmeetProject.Services
             return result;
         }
 
-        public int AddFavorite(Favorite f)
+        public void AddFavorite(Favorite f)
         {
             SqlConnection conn = new SqlConnection(connString);
-            string command = "INSERT INTO Favorite (Id, UserId, EventId) VALUES (@Id, @UserId, @EventId)";
-            int result = conn.Execute(command, new
+            string command = "INSERT INTO Favorite (UserId, EventId) VALUES (@UserId, @EventId)";
+            conn.Execute(command, new
             {
-                Id = f.Id,
                 UserId = f.UserId,
                 EventId = f.EventId
             });
-            conn.Close();
-            return result;
         }
 
         public Favorite GetFavorite(int id)

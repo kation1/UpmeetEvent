@@ -19,3 +19,9 @@ div.link {
     color:whitesmoke;
 
 }
+
+button.favorite {
+  position: relative;
+  left: 390px;
+  bottom: 17px;
+}
