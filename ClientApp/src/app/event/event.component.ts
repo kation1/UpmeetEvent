@@ -12,11 +12,16 @@ export class EventComponent {
   @Input() events: Events;
   event: Event;
 
+
   constructor(private eventService: DataAccessEventService) { }
 
   ngOnInit(): void{
     this.eventService.getEventList().subscribe(
       (data: Events) =>
         this.events = data)
-      };
+  };
+
+  doHidden = function () {
+    this.isHidden = !this.isHidden;
+  }
 }

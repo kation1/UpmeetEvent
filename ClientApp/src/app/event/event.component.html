@@ -1,10 +1,21 @@
 
-<div><h2>Events</h2>
+<div>
+  <h2>Events</h2>
   <h6>(Click to see more detail)</h6>
   <br /><br />
   <ng-container *ngFor="let frank of events">
     <a routerLink="/eventdetails" [queryParams]="frank">{{frank.name}}</a><br />
 
   </ng-container>
-
+  <br />
+  <button (click)="doHidden()">Add Event</button>
+  <br /><br />
+  <div [ngClass]="{'hidden':!isHidden}">
+    Event Name: <input [(ngModel)]="Name" type="text" /><br />
+    Event Date: <input [(ngModel)]="Date" type="text" /><br />
+    <br />
+    <button (click)="addEvent()"> Submit </button>
   </div>
+
+
+</div>
