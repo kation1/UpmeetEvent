@@ -1,3 +1,21 @@
 .hidden {
   display: none;
 }
+
+div.event{
+    position:relative;
+    width: 470px;
+    height:50px;
+    border:ridge 1px black;
+    border-radius:16px;
+    background-color:cornflowerblue;
+}
+
+div.link {
+    position: relative;
+    left:175px;
+    top:10px;
+    width: 20%;
+    color:whitesmoke;
+
+}

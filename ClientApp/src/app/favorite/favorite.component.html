@@ -4,8 +4,9 @@
   <h6>()</h6>
   <br /><br />
   <ng-container *ngFor="let fav of userFavorites">
-    ID:{{fav.userid}} {{fav.name}}   --- {{fav.date}}<button (click)="removeFavorite(fav)">[X]</button><br />
-
+    <div class="event">
+      <div class="details">{{fav.name}}   --- {{fav.date}}</div><div class="x"><button (click)="removeFavorite(fav)">[X]</button></div><br />
+    </div><br/>
 
   </ng-container>
 

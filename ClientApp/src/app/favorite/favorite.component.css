@@ -1,1 +1,24 @@
-﻿
+
+div.event {
+    position: relative;
+    width: 470px;
+    height: 50px;
+    border: ridge 1px black;
+    border-radius: 16px;
+    background-color: cornflowerblue;
+    color:ghostwhite;
+}
+
+div.x{
+    position:relative;
+    left:390px;
+    bottom:17px;
+}
+
+div.details{
+    position:relative;
+    top:8px;
+    left:5px;
+}
+
+

@@ -4,9 +4,13 @@
   <h6>(Click to see more detail)</h6>
   <br /><br />
   <ng-container *ngFor="let frank of events">
-    <a routerLink="/eventdetails" [queryParams]="frank">{{frank.name}}</a><br />
-
+    <div class="event">
+    <a routerLink="/eventdetails" [queryParams]="frank">
+      <div class="link">{{frank.name}}</div>
+    </a><br />
+    </div><br/>
   </ng-container>
+
   <br />
   <button (click)="doHidden()">Add Event</button>
   <br /><br />
@@ -14,7 +18,7 @@
     Event Name: <input [(ngModel)]="name" type="text" /><br />
     Event Date: <input [(ngModel)]="date" type="text" /><br />
     <br />
-    <button (click)="addEvent()"> Submit </button>
+    <button (click)="addEvent()" (click)="doHidden()"> Submit </button>
   </div>
 
 
