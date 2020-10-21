@@ -20,16 +20,16 @@ namespace UpmeetProject.Services
             connString = config.GetConnectionString("dave");
         }
 
-        public long AddEvent(Event e)
+        public void AddEvent(Event e)
         {
             SqlConnection conn = new SqlConnection(connString);
             string command = "INSERT INTO Event (Name, Date) VALUES (@Name, @Date)";
-            long result = conn.Execute(command, new
+            conn.Execute(command, new
             {
                 Name = e.Name,
                 Date = e.Date
             });
-            return result;
+            //return result; Changed to Void
         }
 
         public void RemoveFavorite(long id)

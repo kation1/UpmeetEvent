@@ -35,9 +35,9 @@ namespace UpmeetProject.Controllers
 
         [HttpPost("create")]  
         //Might need [FromBody]
-        public Event AddEvent(Event E)
+        public void AddEvent(Event E)
         {
-            return AddEvent(E);
+            dal.AddEvent(E);
         }
 
 
