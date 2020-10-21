@@ -32,7 +32,7 @@ namespace UpmeetProject.Services
             return result;
         }
 
-        public void RemoveFavorite(int id)
+        public void RemoveFavorite(long id)
         {
             SqlConnection conn = new SqlConnection(connString);
             string command = "DELETE FROM Favorite WHERE ID=@id";

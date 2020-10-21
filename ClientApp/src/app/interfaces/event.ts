@@ -22,6 +22,7 @@ export interface UserFavorite {
   name: string;
   date: string;
   userId: string;
+  id: number;
 }
 
 export interface UserFavorites {

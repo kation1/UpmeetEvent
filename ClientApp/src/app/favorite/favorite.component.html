@@ -3,8 +3,9 @@
   <h2>Favorites</h2>
   <h6>()</h6>
   <br /><br />
-  <ng-container *ngFor="let fav of favorites">
-    {{fav.name}}   --- {{fav.date}}<br />
+  <ng-container *ngFor="let fav of userFavorites">
+    ID:{{fav.userid}} {{fav.name}}   --- {{fav.date}}<button (click)="removeFavorite(fav)">[X]</button><br />
+
 
   </ng-container>
 

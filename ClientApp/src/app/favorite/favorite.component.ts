@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Favorites, UserFavorites } from '../interfaces/event';
+import { Favorites, UserFavorite, UserFavorites } from '../interfaces/event';
 import { DataAccessFavoriteService } from '../services/data-access-favorite.service';
 
 
@@ -11,18 +11,25 @@ import { DataAccessFavoriteService } from '../services/data-access-favorite.serv
 /** favorite component*/
 export class FavoriteComponent {
 
-  favorites:  UserFavorites;
-  
+  userFavorites: UserFavorites;
+  userFavorite: UserFavorite;
+
   /** favorite ctor */
   constructor(private favoriteService: DataAccessFavoriteService) { }
   ngOnInit(): void {
 
     this.favoriteService.getFavoriteList().subscribe(
       (data: UserFavorites) =>
-        this.favorites = data)
+        this.userFavorites = data)
 
   };
 
+  removeFavorite(fav: UserFavorite) {
+
+    console.log(fav.id);
+    this.favoriteService.removeFavorite(fav.id).subscribe();
+
+  }
 
 
 
