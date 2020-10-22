@@ -24,7 +24,7 @@ export class EventDetailsComponent {
       (data : Event) =>
         this.frank = data)
 
-    this.eventService.getEvent(this.frank).subscribe(
+    this.eventService.getEvent(this.frank.id).subscribe(
       (data: Event) =>
         this.frank = data)
   };

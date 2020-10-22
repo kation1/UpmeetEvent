@@ -16,7 +16,7 @@ export class DataAccessFavoriteService {
     return this.http.get(this.apiUrl)
   }
 
-  getFavorite(id) {
+  getFavorite(id: number) {
     return this.http.get(`${this.apiUrl}/${id}`)
   }
 

@@ -38,7 +38,7 @@ namespace UpmeetProject.Controllers
 
         [HttpPost("addfavorite")]
         //Might need [FromBody]
-        public void AddFavorite([FromForm] Favorite F)
+        public void AddFavorite(Favorite F)
         {
             dal.AddFavorite(F);
         }
