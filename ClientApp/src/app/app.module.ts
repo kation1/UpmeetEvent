@@ -8,7 +8,10 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { FavoriteComponent } from './favorite/favorite.component';
+import { EventComponent } from './event/event.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
+
 
 @NgModule({
   declarations: [
@@ -16,16 +19,20 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent
+    FavoriteComponent,
+    EventComponent,
+    EventDetailsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: '', component: EventComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'favorite', component: FavoriteComponent },
+      { path: 'event', component: EventComponent },
+      { path: 'eventdetails', component: EventDetailsComponent },
     ])
   ],
   providers: [],
